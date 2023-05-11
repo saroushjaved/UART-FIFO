@@ -46,13 +46,13 @@ module fifo_tx(clk_fifo_tx, data_in, next_frame, data_out);
                    begin
                      if(rd_pt==4'b1111)
                        begin
-                         data_out <= fifo_tx[rd_pt]
+                         data_out <= fifo_tx_men[rd_pt]
                          //rd_en <= 1'b0;
                          fifo_tx_empty <= 1'b1;
                        end
                      else
                        begin
-                         data_out <= fifo_tx_mem[rd_Pt];
+                              data_out <= fifo_tx_mem[rd_pt];
                          rd_pt <= rd_pt+1;
                        end
                    end
